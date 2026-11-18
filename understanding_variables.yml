@@ -1,0 +1,22 @@
+---
+- name: install the iis web service
+  hosts: win1.example.com
+  vars:
+    webpkg: Web-Server
+    websvc: W3Svc
+    webdocroot: C:\Inetpub\wwwroot\
+  vars_files:
+  - web-info.yml
+  tasks:
+  - name: iis service installed
+    ansible.windows.win_feature:
+      name: "{{ webpkg }}"
+      state: "{{ web_pkg_state }}"
+  - name: iis service started
+    ansible.windows.win_service:
+      name: "{{ W3Svc }}"
+      state: "{{ web_svc_state }}"
+  - name: website index.html created
+    ansible.windows.win_copy:
+      src: index.html
+      dest: "{{ webdocroot }}index.html"
