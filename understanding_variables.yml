@@ -7,6 +7,7 @@
     webdocroot: C:\Inetpub\wwwroot\
   vars_files:
   - web-info.yml
+  - mysecretdata.yml
   tasks:
   - name: iis service installed
     ansible.windows.win_feature:
@@ -22,6 +23,4 @@
       dest: "{{ webdocroot }}index.html"
   - name: print a custom message
     ansible.builtin.debug:
-      msg: "{{ targetsvc }} is setup"
-    vars:
-      targetsvc: webservice
+      msg: "{{ gittoken }} is setup"
