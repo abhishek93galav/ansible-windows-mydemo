@@ -14,7 +14,7 @@
       state: "{{ web_pkg_state }}"
   - name: iis service started
     ansible.windows.win_service:
-      name: "{{ W3Svc }}"
+      name: "{{ websvc }}"
       state: "{{ web_svc_state }}"
   - name: website index.html created
     ansible.windows.win_copy:
