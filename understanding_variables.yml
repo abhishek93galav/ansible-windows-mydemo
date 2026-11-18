@@ -20,3 +20,8 @@
     ansible.windows.win_copy:
       src: index.html
       dest: "{{ webdocroot }}index.html"
+  - name: print a custom message
+    ansible.builtin.debug:
+      msg: "{{ targetsvc }} is setup"
+    vars:
+      targetsvc: webservice
