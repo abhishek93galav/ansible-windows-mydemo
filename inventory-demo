@@ -1,9 +1,0 @@
-servera maintainer=abhi
-serverb maintainer=olaf
-
-[webservers]
-serverc maintainer=abhi
-serverd
-
-[webservers:vars]
-maintainer=ricardo
