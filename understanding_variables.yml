@@ -24,3 +24,6 @@
   - name: print a custom message
     ansible.builtin.debug:
       msg: "{{ gittoken }} is setup"
+  - name: use fact
+    ansible.builtin.debug:
+      msg: "{{ ansible_facts['interfaces'][0]['macaddress'] }}"
