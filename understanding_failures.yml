@@ -1,0 +1,14 @@
+- name: failures
+  hosts: all
+  tasks:
+  - name: task that will fail but can be ignores
+    ansible.windows.win_feature:
+      name: Team-Application 
+      state: present
+    ignore_errors: true
+  - name: home page is set
+    ansible.windows.win_uri:
+      url: http://win1.example.com
+      return_content: true
+    register: index
+    failed_when: index['content'] != "Ansible is great"
