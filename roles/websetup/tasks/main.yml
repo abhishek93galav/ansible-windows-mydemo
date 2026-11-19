@@ -9,4 +9,4 @@
 - name: website index.html created
   ansible.builtin.template:
       src: index.html.j2
-      dest: "{{ web_doc_root }}\index.html"
+      dest: "{{ web_doc_root }}index.html"
