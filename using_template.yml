@@ -1,0 +1,7 @@
+- name: using a jinja termplate
+  hosts: all
+  tasks:
+  - name: push web content
+    ansible.builtin.template:
+      src: index.html.j2
+      dest: C:\Users\devops\index.html

@@ -1,0 +1,10 @@
+{# this is a comment just for the template #}
+
+#this file is managed by ansible.
+Hello World.
+
+This server is running on IP: {{ ansible_facts['interfaces'][0]['ipv4']['address'] }}
+
+{% if maintainer is defined %}
+This server is maitained by {{ maintainer | capitalize }}
+{% endif %}
