@@ -1,0 +1,19 @@
+- name: using loops
+  vars_files:
+  - myfiles.yml
+  tasks:
+  - name: installing debug tools with loops
+    ansible_windows.win_feature:
+      name: "{{ item }}"
+      state: present
+    loop:
+    - Web-Custom-Logging
+    - Web-Log-Libraries
+    - Web-Http-Tracing
+    - Web-Request-Monitor
+  
+  - name: ensuring files management
+    ansible.windows.win_file:
+      path: "{{ item['file'] }}"
+      state: "{{ item['state'] }}"
+    loop: "{{ myfiles }}"

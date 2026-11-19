@@ -1,0 +1,5 @@
+myfiles:
+  - file: C:\Users\devops\samplefile.txt
+    state: touch
+  - file: C:\Users\devops\mydata
+    state: directory
