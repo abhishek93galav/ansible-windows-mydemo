@@ -1,0 +1,21 @@
+- name: using diff cond
+  hosts: all
+  tasks:
+    - name: running task upon var being declared
+      ansible.builtin.debug:
+        msg: "{{ ansible_facts['fqdn'] }}"
+      when: maintainer is defined
+    - name: runing task based on availa mem
+      ansible.builtin.debug:
+        msg: "{{ ansible_facts['fqdn'] }}"
+      when: ansible_facts['memfree_mb'] > 2750
+    - name: running task based on 2 conditions
+      ansible.builtin.debug:
+        msg: "{{ ansible_facts['fqdn'] }}"
+      when: 
+        - maintainer is defined
+        - maintainer == "olaf"
+    - name: running on win1.example.com
+      ansible.builtin.debug:
+        msg: "{{ ansible_facts['fqdn'] }}"
+      when: inventory_hostname == "win1.example.com"
