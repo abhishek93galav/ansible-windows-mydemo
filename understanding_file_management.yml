@@ -16,6 +16,7 @@
       ansible.windows.win_stat:
         path: C:\Users\devops\Desktop\meetings.rtf
       register: output
+      ignore_errors: true
 
     - name: Print results of win_stat
       debug:
@@ -45,5 +46,5 @@
 
     - name: Copy a single file
       ansible.windows.win_copy:
-        src: files/test.rtf
-        dest: C:\Users\devops\Desktop\clientdata\test.rtf
+        src: index.html
+        dest: C:\Users\devops\Desktop\clientdata\webconternt
