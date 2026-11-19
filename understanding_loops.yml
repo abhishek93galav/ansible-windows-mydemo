@@ -4,7 +4,7 @@
   - myfiles.yml
   tasks:
   - name: installing debug tools with loops
-    ansible_windows.win_feature:
+    ansible.windows.win_feature:
       name: "{{ item }}"
       state: present
     loop:
