@@ -1,4 +1,5 @@
 - name: using loops
+  hosts: all
   vars_files:
   - myfiles.yml
   tasks:
