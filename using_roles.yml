@@ -1,4 +1,4 @@
-- namae: caling the role
+- name: caling the role
   hosts: all
   roles:
   - role: websetup
