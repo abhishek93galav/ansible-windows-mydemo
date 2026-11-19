@@ -1,0 +1,12 @@
+- name: iis service installed
+  ansible.windows.win_feature:
+      name: "{{ web_pkg }}"
+      state: present
+- name: iis service started
+  ansible.windows.win_service:
+      name: "{{ web_svc }}"
+      state: started
+- name: website index.html created
+  ansible.builtin.template:
+      src: index.html.j2
+      dest: "{{ web_doc_root }}\index.html"

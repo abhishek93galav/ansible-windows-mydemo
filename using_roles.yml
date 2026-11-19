@@ -1,0 +1,8 @@
+- namae: caling the role
+  hosts: all
+  roles:
+  - role: websetup
+  tasks:
+  - name: sampel task 1
+    ansible.builtin.debug:
+      msg: normal task form task section
